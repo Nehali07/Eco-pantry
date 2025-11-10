@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "EcoPantry Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"hashedpass\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/signup"
+        }
+      }
+    },
+    {
+      "name": "Pantry - Get Items",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <supabase-token>",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/pantry/:userId"
+        }
+      }
+    },
+    {
+      "name": "Recipes - Get Suggestions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <supabase-token>",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/recipes/suggestions/:userId"
+        }
+      }
+    },
+    {
+      "name": "Shopping - Get Lists",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <supabase-token>",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/shopping/:userId"
+        }
+      }
+    },
+    {
+      "name": "Analytics - Get Stats",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <supabase-token>",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/analytics/:userId"
+        }
+      }
+    }
+  ]
+}

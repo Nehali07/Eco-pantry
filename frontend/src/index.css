@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Eco-friendly color palette */
+    --background: 48 100% 97%; /* Cream #FFF8E7 */
+    --foreground: 160 20% 25%; /* Dark green-gray for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 20% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 20% 25%;
+
+    --primary: 152 31% 73%; /* Soft green #A8D5BA */
+    --primary-foreground: 160 30% 15%;
+
+    --secondary: 24 92% 71%; /* Warm orange #F7A072 */
+    --secondary-foreground: 160 30% 15%;
+
+    --muted: 152 20% 90%;
+    --muted-foreground: 160 15% 45%;
+
+    --accent: 45 100% 74%; /* Yellow #FFD97D */
+    --accent-foreground: 160 30% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 152 20% 85%;
+    --input: 152 15% 92%;
+    --ring: 152 31% 60%;
+
+    --radius: 1rem; /* More rounded for friendly feel */
+    
+    /* Custom design tokens */
+    --gradient-eco: linear-gradient(135deg, hsl(152, 31%, 73%), hsl(48, 100%, 97%));
+    --gradient-warm: linear-gradient(135deg, hsl(24, 92%, 71%), hsl(45, 100%, 74%));
+    --shadow-soft: 0 4px 20px hsla(152, 31%, 40%, 0.1);
+    --shadow-glow: 0 0 30px hsla(152, 31%, 60%, 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 152 20% 90%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 152 20% 90%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 152 20% 90%;
+
+    --primary: 152 31% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 92% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 160 20% 20%;
+    --muted-foreground: 152 15% 60%;
+
+    --accent: 45 100% 65%;
+    --accent-foreground: 160 30% 15%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 18%;
+    --ring: 152 31% 50%;
+    
+    --shadow-soft: 0 4px 20px hsla(160, 30%, 5%, 0.5);
+    --shadow-glow: 0 0 30px hsla(152, 31%, 40%, 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Poppins',sans-serif];
+  }
+}
+
+@layer utilities {
+  .eco-card {
+    @apply bg-card rounded-2xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-glow)] transition-[var(--transition-smooth)];
+  }
+  
+  .eco-button {
+    @apply rounded-xl font-medium transition-[var(--transition-smooth)] hover:scale-105;
+  }
+  
+  .eco-gradient {
+    background: var(--gradient-eco);
+  }
+  
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+}
